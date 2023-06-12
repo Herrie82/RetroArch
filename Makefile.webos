@@ -1,5 +1,8 @@
 include version.all
 
+TARGET_PREFIX ?= $(CROSS_COMPILE)
+SDKTARGETSYSROOT ?= $(STAGING_DIR)
+
 $(call assert,$(call seq,$(TARGET_PREFIX),arm-webos-linux-gnueabi-),webOS SDK isn't setup properly. See https://github.com/webosbrew/meta-lg-webos-ndk#compile-program-by-command-line)
 
 WEBOS_FREETYPE_CONFIG ?= $(SDKTARGETSYSROOT)/usr/bin/freetype-config
